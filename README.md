@@ -6,6 +6,7 @@ Thus, the score (denominated in Webcoins) can be exchanged for fiat money at the
 Users can also invest Webcoins in research and investigative journalism projects (in exchange for a share of the resulting product). Thus promoting independent and unbiased science and journalism (further strengthening the value of platform).
 
 See Demo here: https://youtu.be/UsQNLJvO-VE
+
 See Intro video here: https://youtu.be/fWbqsDp1OoI
 
 <!--
