@@ -17,6 +17,7 @@ Intro video: https://youtu.be/fWbqsDp1OoI
 Frequently Asked Questions: https://themofi.org/faq/
 
 
+
 ### Version 0.0.1:
 This is a Proof-of-Concept version of the MofI Platform. It has basic functionality for:
 * Chrome Extension User Interface (navigation menu)
