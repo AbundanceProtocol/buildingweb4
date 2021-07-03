@@ -1,9 +1,9 @@
 ### THE MofI (MARKETPLACE OF IDEAS) PLATFORM
 
 The MofI Platform offers an alternative to the Ratings & Attention Economy. It removes the perverse incentives of ratings-based advertising and creates a system where an author's score is based on the importance and credibility of their digital content. This score has real, tangible value, since it reflects both the accuracy of online content, and the credibility of all authors/users on platform (as well as their areas of expertise).
-Thus, the score (denominated in Webcoins) can be exchanged for fiat money at the market exchange rate.
+Thus, the score (denominated in tokens) can be exchanged for money at the market exchange rate.
 
-Users can also invest Webcoins in research and investigative journalism projects (in exchange for a share of the resulting product). Thus promoting independent and unbiased science and journalism (further strengthening the value of platform).
+Users can also invest tokens in research and investigative journalism projects (in exchange for a share of the resulting product). Thus promoting independent and unbiased science and journalism (further strengthening the value of platform).
 
 
 Project website: https://themofi.org/
