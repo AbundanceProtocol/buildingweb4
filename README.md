@@ -17,6 +17,14 @@ Intro video: https://youtu.be/fWbqsDp1OoI
 Frequently Asked Questions: https://themofi.org/faq/
 
 
+### Version 0.0.1:
+This is a Proof-of-Concept version of the MofI Platform. It has basic functionality for:
+* Chrome Extension User Interface (navigation menu)
+* User registration & login
+* Search (posts, authors, proposals, categories)
+* Post summary
+* Post review (text highlight, comments, categories, influence, context, etc.)
+* Proposal submission
 
 <!--
 **TheNewInternet/TheNewInternet** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
