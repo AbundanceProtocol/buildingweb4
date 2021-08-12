@@ -6,15 +6,15 @@ Thus, the score (denominated in tokens) can be exchanged for money at the market
 Users can also invest tokens in research and investigative journalism projects (in exchange for a share of the resulting product). Thus promoting independent and unbiased science and journalism (further strengthening the value of platform).
 
 
-Project website: https://themofi.org/
+Project website: https://themofi.github.io/
 
-Project White Paper: https://themofi.org/white-paper/
+Project White Paper: https://themofi.github.io/white-paper/
 
 Proof-of-Concept Demo: https://youtu.be/UsQNLJvO-VE
 
 Intro video: https://youtu.be/fWbqsDp1OoI
 
-Frequently Asked Questions: https://themofi.org/faq/
+Frequently Asked Questions: https://themofi.github.io/faq/
 
 
 
