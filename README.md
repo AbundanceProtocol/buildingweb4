@@ -6,15 +6,15 @@ Web 4.0 leverages existing Web 2 technologies (user interaction) and Web 3 techn
 Users can also invest tokens in open-source, research and investigative journalism projects (in exchange for a share of the resulting product).
 
 
-Project website: https://themofi.github.io/
+Project website: https://buildingweb4.github.io/
 
-Project White Paper: https://themofi.github.io/white-paper/
+Project White Paper: https://buildingweb4.github.io/white-paper/
 
 Proof-of-Concept Demo: https://youtu.be/UsQNLJvO-VE
 
 Intro video: https://youtu.be/fWbqsDp1OoI
 
-Frequently Asked Questions: https://themofi.github.io/faq/
+Frequently Asked Questions: https://buildingweb4.github.io/faq/
 
 
 
