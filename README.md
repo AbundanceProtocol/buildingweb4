@@ -10,7 +10,9 @@ Project website: https://buildingweb4.io/
 
 Project White Paper: https://buildingweb4.io/white-paper/
 
-Proof-of-Concept Demo: https://youtu.be/UsQNLJvO-VE
+Project Discord: https://discord.gg/sHcV7g3nqu
+
+Browser Extension Proof-of-Concept Demo: https://youtu.be/UsQNLJvO-VE
 
 Intro video: https://youtu.be/fWbqsDp1OoI
 
