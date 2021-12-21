@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { TouchEvent } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../bw4-logo.svg';
 import { FaGithub, FaSearch, FaPencilAlt, FaUserAlt, FaListUl, FaComments, FaYoutube, FaTwitter, FaDiscord, FaMediumM } from 'react-icons/fa';
@@ -10,31 +10,36 @@ import { MdAlternateEmail } from 'react-icons/md';
 import { GiGearHammer } from 'react-icons/gi';
 import { BsQuestionCircle, BsMap } from 'react-icons/bs';
 import '../index.css';
-
+import { dragEnd, dragStart } from '../interact.config'
 
 const Topnav = () => {
   return (
-    <div className="flex-row flex-middle">
-      <NavLogo />
-      {/* <div className="flex-gr"></div> */}
-      <Link to="/" className="no-under">
-          <HeaderIcon iconType="home" />
-      </Link>
-      <Link to="/roadmap" className="no-under">
-          <HeaderIcon iconType="roadmap" />
-      </Link>
-      <Link to="/how-it-works" className="no-under">
-          <HeaderIcon iconType="how it works" />
-      </Link>
-      <Link to="/white-paper" className="no-under">
-          <HeaderIcon iconType="whitepaper" />
-      </Link>
-      <Link to="/faq" className="no-under">
-          <HeaderIcon iconType="faq" />
-      </Link>
-      <Link to="/connect" className="no-under">
-          <HeaderIcon iconType="connect" />
-      </Link>
+    <div className="top-nav">
+      <div className="nav-container">
+        <div className="draggable platform-menu" onTouchEnd={ dragEnd } onTouchStart={ dragStart } onMouseDown={ dragStart } onMouseUp={ dragEnd } >
+          <div className="flex-row flex-middle">
+            <NavLogo />
+            <Link to="/" className="no-under">
+                <HeaderIcon iconType="home" />
+            </Link>
+            <Link to="/roadmap" className="no-under">
+                <HeaderIcon iconType="roadmap" />
+            </Link>
+            <Link to="/how-it-works" className="no-under">
+                <HeaderIcon iconType="how it works" />
+            </Link>
+            <Link to="/white-paper" className="no-under">
+                <HeaderIcon iconType="whitepaper" />
+            </Link>
+            <Link to="/faq" className="no-under">
+                <HeaderIcon iconType="faq" />
+            </Link>
+            <Link to="/connect" className="no-under">
+                <HeaderIcon iconType="connect" />
+            </Link>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

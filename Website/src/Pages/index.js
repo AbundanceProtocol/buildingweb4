@@ -21,19 +21,22 @@ import Error from './Error';
 import Home from './Home';
 import Connect from './Connect';
 
+
 const ReactRouterSetup = () => {
-    return <Router>
-        <Topnav/>
-        <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route path="/roadmap" element={<Roadmap/>}/>
-            <Route path="/how-it-works" element={<Howitworks/>}/>
-            <Route path="/white-paper" element={<Whitepaper/>}/>
-            <Route path="/faq" element={<Faq/>}/>
-            <Route path="/connect" element={<Connect/>}/>
-            <Route path="*" element={<Error/>}/>
-        </Routes>
-    </Router>
+    return (
+        <Router>
+            <Topnav />
+            <Routes>
+                <Route exact path="/" element={<Home/>}/>
+                <Route path="/roadmap" element={<Roadmap/>}/>
+                <Route path="/how-it-works" element={<Howitworks/>}/>
+                <Route path="/white-paper" element={<Whitepaper/>}/>
+                <Route path="/faq" element={<Faq/>}/>
+                <Route path="/connect" element={<Connect/>}/>
+                <Route path="*" element={<Error/>}/>
+            </Routes>
+        </Router>
+    )
 };
 
 export default ReactRouterSetup;
