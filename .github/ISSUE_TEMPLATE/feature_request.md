@@ -5,12 +5,12 @@ labels: enhancement
 assignees: ''
 
 ---
-## 🔺 Issue: 
+# 🔺 Issue
 
 New issue template
 
 
-## 🔍  Description:
+## 🔍  Description
 
 Create a reusable github issue template for assignees to reference to in order to complete a feature creation, bugfix, etc.
 
@@ -20,7 +20,7 @@ Checklist should be considered requirements, since it will help to fulfill our e
 
 This template can be further customized as necessary.
 
-## 🔗 Helpful Links:
+## 🔗 Helpful Links
 
 [Sample reference to docs](https://docs.github.com/en/communities/using-templates-to-encourage-useful-issues-and-pull-requests/configuring-issue-templates-for-your-repository)
 
@@ -29,21 +29,20 @@ This template can be further customized as necessary.
 
 [:computer: desktop view](url)
 
- ###### (_image references_)
+__(_image references_)__
 
-<br/>
+</br>
 
 [:iphone: mobile view](url)
 
- ###### (_image references_)
+__(_image references_)__
 
-<br/>
-
-
-## ☑️ Definition of Done:
+</br>
 
 
-##### Checklist:
+## ☑️ Definition of Done
+
+__Checklist:__
 
 - [ ] Mercury
 - [ ] Venus
@@ -51,7 +50,6 @@ This template can be further customized as necessary.
 - [ ] Mars
 - [ ] Jupiter
 
+</br></br>
 
-<br/><br/>
-
-<hr/>
+</hr>
