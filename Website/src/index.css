@@ -1,0 +1,167 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    border: 0; 
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FLEX */
+
+.flex-row {
+    display: flex; 
+    flex-direction: row; 
+}
+
+.flex-col {
+    display: flex; 
+    flex-direction: column; 
+}
+
+.flex-middle {
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.flex-gr {
+    flex-grow: 1;
+}
+
+
+.size-87 {
+    height: 87px;
+    padding: 0 15px 0 15px;
+    min-width: 67px;
+}
+
+.size-50 {
+    height: 60px;
+    width: 60px;
+}
+
+.size-25 {
+    height: 25px;
+    width: 25px;
+}
+
+.font-20 {
+    font-size: 25px;
+    font-family: Arial,sans-serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.font-15 {
+    font-size: 15px;
+    font-family: Arial,sans-serif;
+    font-weight: 500;
+}
+
+.no-under {
+    text-decoration: none;
+}
+
+.mar-t-6 {
+    margin-top: 6px;
+}
+
+.col-ccc {
+    color: rgb(204, 204, 204);
+}
+
+.col-333 {
+    background-color: rgb(51, 51, 51);
+}
+
+.col-fff {
+    background-color: rgb(255, 255, 255);
+}
+
+.draggable {
+    touch-action: none;
+    position: absolute;
+}
+
+.top-nav {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    display: flex;
+    align-items: right;
+    justify-content: bottom;
+    overflow: hidden;
+    border-radius: 0px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    touch-action: auto;
+    pointer-events: none;
+}
+
+.nav-container {
+    width: 100%;
+    height: 100vh;
+    background-color: transparent;
+    overflow: hidden;
+    border-radius: 0px;
+    position: relative;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    touch-action: auto;
+    pointer-events: none;
+}
+
+.platform-menu {
+    background-color: rgba(240, 240, 240, 0.9);
+    border: 0px solid rgba(240, 240, 240, 0.5);
+    border-radius: 50px;
+    z-index: 1200;
+    touch-action: none;
+    user-select: none;
+    pointer-events: auto;
+    position: absolute;
+    box-shadow: 0px 0px 10px grey;
+    display: inline-block; 
+    outline: 0;
+
+
+    opacity: 0.95; 
+    overflow: hidden; font-size: 0px; border-radius: 14px; background-color: rgb(51, 51, 51); left: 10px; top: 10px; font-family: Arial, sans-serif !important; transform: scale(1);
+
+
+}
+
+/* .platform-menu:active {
+    background-color: rgba(221, 221, 221, 0.9);
+} */
+
+.platform-menu:hover {
+    cursor: pointer;
+    border-width: 0px;
+}
+
+
+/* 
+.mar-t-5 {
+    margin-top: 5px;
+}
+
+.size-70 {
+    height: 70px;
+    width: 70px;
+}
+.size-20 {
+    height: 20px;
+    width: 20px;
+}
+
+.font-12 {
+    font-size: 12px;
+    font-family: Arial,sans-serif;
+    font-weight: 500;
+} */

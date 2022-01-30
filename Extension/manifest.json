@@ -1,0 +1,47 @@
+{
+    "web_accessible_resources": [
+        "fonts/FontAwesome.otf",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "64": "icon64.PNG"
+        },
+        "default_title": "Click or press Alt+Shift+D to launch Platform"
+    },
+    "manifest_version": 2,
+    "name": "New Internet Toolbar",
+    "description": "New Internet Toolbar",
+    "version": "0.0.1",
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "icons": {
+        "64": "icon64.PNG"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": [
+                "libraries/jquery-3.4.1.min.js", 
+                "libraries/interact.min.js", 
+                "libraries/anime.js", 
+                "myscript.js"
+            ],
+            "css": [
+                "font-awesome.min.css", 
+                "css/fontawesome.min.css",
+                "style.css"
+            ]
+        }
+    ],
+    "permissions": [
+        "http://localhost:3000/*",
+        "tabs",
+        "storage"
+    ]    
+}
