@@ -1,16 +1,16 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.12;
 
 // import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 // import "./Data.sol";
-import "./Categories.sol";
+// import "./Categories.sol";
 import "./Posts.sol";
 import "./UserFunding.sol";
-import "./UserScore.sol";
+// import "./UserScore.sol";
 import "./InitialReview.sol";
 
-contract Abundance is ERC20, Categories, Posts, InitialReview, UserFunding, UserScore {
+contract Abundance is ERC20, Posts, InitialReview, UserFunding {
 
     uint time;
 
@@ -25,10 +25,10 @@ contract Abundance is ERC20, Categories, Posts, InitialReview, UserFunding, User
         emit Transfer(address(0), receiver, amount);
     }
 
-    function progress() public view timeLock returns(uint) {
-        uint timestamp = block.timestamp;
-        return timestamp;
-    }
+    // function progress() public view timeLock returns(uint) {
+    //     uint timestamp = block.timestamp;
+    //     return timestamp;
+    // }
 
     function _timeLock() private view {
         require(block.timestamp > time, "Tokens locked");
@@ -39,8 +39,8 @@ contract Abundance is ERC20, Categories, Posts, InitialReview, UserFunding, User
         _;
     }
 
-    function numReturn() public pure returns(uint) {
-        return 42;
-    }
+    // function numReturn() public pure returns(uint8) {
+    //     return 42;
+    // }
 
 }

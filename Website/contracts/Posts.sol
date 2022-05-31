@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.12;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -38,9 +38,9 @@ contract Posts is Data {
         return hashToPost[_hash];
     }
 
-    function fetchPostTitle(string memory _hash) public view returns(string memory) {
-        return hashToPost[_hash].title;
-    }
+    // function fetchPostTitle(string memory _hash) public view returns(string memory) {
+    //     return hashToPost[_hash].title;
+    // }
  
     function fetchPosts() public view returns (Post[] memory) {
         uint itemCount = _postIds.current();

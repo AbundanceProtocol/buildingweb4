@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.12;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -61,8 +61,8 @@ contract InitialReview is Data {
         return hashInitReview[reviewHash];
     }
 
-    function fetchInitReview(string memory _hash) public view returns(InitialReview memory) {
-        return hashInitReview[_hash];
-    }
+    // function fetchInitReview(string memory _hash) public view returns(InitialReview memory) {
+    //     return hashInitReview[_hash];
+    // }
 
 }

@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: Unlicense
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.12;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -7,7 +7,7 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 contract Data {
 
     address public owner;
-    uint256 public totalCategoryVotes;
+    uint public totalCategoryVotes;
 
 
     // mapping(string => mapping(string => uint)) public catRatio;
@@ -49,12 +49,12 @@ contract Data {
     event PostCreated(uint id, string title, string hash);
     event PostUpdated(uint id, string title, string hash, bool published);
     event InitReviewCreated(uint id, string postHash, string revHash);
-    event FundingRequested(address user, uint amount, uint percent, uint deadline, ReqType reqType);
+    event FundingRequested(address user, ReqType reqType, uint reqId);
     event FundingBidPosted(address user, address funder, uint amount, uint percent);
     event BidsAccepted(address user, uint reqId, address[] funders);
     // event ReviewFundingRequest(address user, uint amount, uint percent, uint time);
 
-    enum ReqType { Bid, FundReview, FundChallenge }
+    enum ReqType { Bid, Request, FundReview, FundChallenge }
     enum Urgency { Emergency, Urgent, Expedited, Regular }
 
     struct PartialBid {
@@ -63,19 +63,19 @@ contract Data {
     }
 
     struct FundingReq {
-        uint reqId;
         uint amountRequested;
+        uint reqId;
+        uint deadline;
         uint returnRate;
         ReqType reqType;
-        uint deadline;
     }
 
     struct FundingBid {
-        address bidder;
-        uint bidId;
         uint amountProvided;
+        uint bidId;
         uint returnRate;
         bool accepted;
+        address bidder;
     }
 
     struct UserFunding {
@@ -89,16 +89,16 @@ contract Data {
     }
 
     struct Category {
-        uint id;
+        ParentCat[] parentCat;
+        address[] subscribers;
+        string[] tempRelatedCat;
         string name;
         string catId;
         uint catVotes;
+        uint totalPostValue;
+        uint id;
         uint timeCreated;
         uint blockTime;
-        string[] tempRelatedCat;
-        address[] subscribers;
-        ParentCat[] parentCat;
-        uint totalPostValue;
     }
 
     struct ParentCat {
@@ -109,42 +109,42 @@ contract Data {
     } // parent category
 
     struct Post {
-        uint id;
-        string title;
-        string contentHash;
-        string initReviewtHash;
+        address[] reviewsList;
         PostCategories[] postCat;
         PostInflueces[] postInf;
         PostAuthors[] postAuth;
         PostReview[] postReview;
-        bool initialReview;
-        bool challenged;
-        address[] reviewsList;
+        string title;
+        string contentHash;
+        string initReviewtHash;
         uint reqExpertise;
         uint lockExpiration;
-        uint CrS;
         uint IS;
         uint postValue;
         uint timestamp;
+        uint id;
+        uint CrS;
+        bool initialReview;
+        bool challenged;
     }
 
     struct InitialReview {
+        PostReviewInflueces[] reviewInfluence;
+        PostReviewCategories[] reviewCat;
+        PostReviewAuthors[] reviewAuthor;
+        Urgency urgency;
         address validator;
         string reviewHash;
         uint validatorTotalWeight;
         uint validatorCatWeight;
-        uint timestamp;
-        Urgency urgency;
-        bool funding;
-        uint selfScore;
-        uint selfCrS;
         uint selfIS;
+        uint selfScore;
         uint postScore;
-        uint postCrS;
         uint postIS;
-        PostReviewInflueces[] reviewInfluence;
-        PostReviewCategories[] reviewCat;
-        PostReviewAuthors[] reviewAuthor;
+        uint timestamp;
+        uint selfCrS;
+        uint postCrS;
+        bool funding;
     }
 
     struct InitialReviewValidation {
@@ -154,15 +154,15 @@ contract Data {
     }
 
     struct PostReview {
+        PostReviewInflueces[] reviewInfluence;
+        PostReviewCategories[] reviewCat;
+        PostReviewAuthors[] reviewAuthor;
         address reviewer;
         string reviewHash;
         uint reviewerTotalWeight;
         uint reviewerCatWeight;
         bool accepted;
         uint expectedReviewPercent;
-        PostReviewInflueces[] reviewInfluence;
-        PostReviewCategories[] reviewCat;
-        PostReviewAuthors[] reviewAuthor;
     }
 
     struct PostReviewInflueces {

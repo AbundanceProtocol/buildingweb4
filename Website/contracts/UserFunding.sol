@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: GPL-3.0
-pragma solidity ^0.8.6;
+pragma solidity ^0.8.12;
 
 import "hardhat/console.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
@@ -18,47 +18,47 @@ contract UserFunding is Data {
             amountRequested: _amount,
             returnRate: _percentReturn,
             reqType: _reqType,
-            deadline: _deadline
+            deadline: block.timestamp + _deadline
         });
         fundingReq[msg.sender][fundingReqId] = _fundingReq;
         fundingReqs[msg.sender].push(_fundingReq);
         totalFundingReq[msg.sender] += _amount;
-        emit FundingRequested(msg.sender, _amount, _percentReturn, _deadline, _reqType);
+        emit FundingRequested(msg.sender, _reqType, fundingReqId);
     }
 
-    function getFundingReq(address _user, uint _reqId) public view returns(FundingReq memory) {
-        return fundingReq[_user][_reqId];
-    }
+    // function getFundingReq(address _user, uint _reqId) public view returns(FundingReq memory) {
+    //     return fundingReq[_user][_reqId];
+    // }
 
-    function getAllFundingReqs(address _user) public view returns(UserFunding[] memory) {
-        return userFunding[_user];
+    function getAllFundingReqs(address _user) public view returns(FundingReq[] memory) {
+        return fundingReqs[_user];
     }
 
     function getAcceptedBids(address _user, uint _reqId) public view returns(address[] memory) {
         return acceptedBidders[_user][_reqId];
     }
 
-    function getAcceptedBid(address _user, uint _reqId, address _bidder) public view returns(FundingBid memory) {
-        return acceptedBid[_user][_reqId][_bidder];
-    }
+    // function getAcceptedBid(address _user, uint _reqId, address _bidder) public view returns(FundingBid memory) {
+    //     return acceptedBid[_user][_reqId][_bidder];
+    // }
 
-    function requestReviewFunding(uint _amount, uint _percent, ReqType _reqType) public {
-        // add: string memory _reviewHash
-        // need to address reviewHash issue
-        _fundingReqId.increment();
-        uint fundingReqId = _fundingReqId.current();
-        FundingReq memory _fundingReq = FundingReq({
-            reqId: fundingReqId,
-            amountRequested: _amount,
-            returnRate: _percent,
-            reqType: _reqType,
-            deadline: block.timestamp + 720
-        });
-        fundingReq[msg.sender][fundingReqId] = _fundingReq;
-        fundingReqs[msg.sender].push(_fundingReq);
+    // function requestReviewFunding(uint _amount, uint _percent, ReqType _reqType) public {
+    //     // add: string memory _reviewHash
+    //     // need to address reviewHash issue
+    //     _fundingReqId.increment();
+    //     uint fundingReqId = _fundingReqId.current();
+    //     FundingReq memory _fundingReq = FundingReq({
+    //         reqId: fundingReqId,
+    //         amountRequested: _amount,
+    //         returnRate: _percent,
+    //         reqType: _reqType,
+    //         deadline: block.timestamp + 720
+    //     });
+    //     fundingReq[msg.sender][fundingReqId] = _fundingReq;
+    //     fundingReqs[msg.sender].push(_fundingReq);
 
-        emit FundingRequested(msg.sender, _amount, _percent, block.timestamp + 720, _reqType);
-    }
+    //     emit FundingRequested(msg.sender, _reqType, fundingReqId);
+    // }
 
     function bidFunding(address _user, uint _reqId, uint _amount, uint _percent) public {
         require(fundingReq[_user][_reqId].deadline > block.timestamp);
@@ -76,14 +76,14 @@ contract UserFunding is Data {
         emit FundingBidPosted(_user, msg.sender, _amount, _percent);
     }
 
-    function cancelBid(address _user, uint _reqId, uint _bidId) public {
-        delete fundingBid[_user][_reqId][msg.sender];
-        for (uint i = 0; i < fundingBids[_user][_reqId].length; i++) {
-            if (fundingBids[_user][_reqId][i].bidId == _bidId) {
-                delete fundingBids[_user][_reqId][i];
-            }
-        }
-    }
+    // function cancelBid(address _user, uint _reqId, uint _bidId) public {
+    //     delete fundingBid[_user][_reqId][msg.sender];
+    //     for (uint i = 0; i < fundingBids[_user][_reqId].length; i++) {
+    //         if (fundingBids[_user][_reqId][i].bidId == _bidId) {
+    //             delete fundingBids[_user][_reqId][i];
+    //         }
+    //     }
+    // }
 
     function findBidder(address _user, uint _reqId, address _bidder) view public returns(FundingBid memory) {
         return fundingBid[_user][_reqId][_bidder];
